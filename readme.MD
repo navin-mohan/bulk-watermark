@@ -10,7 +10,13 @@ Make sure that you've imagemagick and gcc installed.
 sudo apt-get install imagemagick graphicsmagick-libmagick-dev-compat
 
 # build
+cmake .
+
+cd build
+
 make
+
+# the executable will be found in bin directory
 
 ```
 
@@ -18,7 +24,9 @@ make
 
 ```bash
 # watermarking a list of images from  a file
-./watermark < list.txt
+# last line of the file should be an empty line
+# that marks the end of the input
+./watermark <left-logo> <right-logo> < list.txt
 
 # or use find to generate the list for you
 # assuming the directory foo contains the images to be watermaked in jpg format
